@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getGraph } from "../actions/graphActions";
+import { getGraph, adjustGraph } from "../actions/graphActions";
 import { connect } from "react-redux";
 import { Item } from "../Item";
 import User from "../User";
@@ -13,10 +13,16 @@ const Graphspecific = React.memo((props) => {
   useEffect(() => {
     props.getGraph();
     setUserSelect(location.state.user);
-    console.log(UserSelect);
   }, []);
+  props.adjustGraph(UserSelect);
   const graph = props.graph;
   const users = props.users;
+  const userFilter = props.userFilter;
+  const filteredUser = graph.filter(function (user) {
+    return user.name === userFilter;
+  });
+  console.log(filteredUser);
+
   return (
     <main className="x">
       <h3>{UserSelect}</h3>
@@ -28,21 +34,27 @@ const Graphspecific = React.memo((props) => {
             user={user}
             state={UserSelect}
             userArray={users}
-            clickItem={() => console.log('not operational')}
+            clickItem={() => console.log("not operational")}
           />
         ))}
       </div>
+      <div className="graph">
+          {filteredUser.map((item) => (
+            <Item key={Math.random().toString(36).slice(2)} item={item} />
+          ))}
+          </div>
     </main>
   );
 });
 
-
 const mapStateToProps = (state) => {
   const graph = state.graph.data;
   const users = state.graph.user;
+  const userFilter = state.graph.userFilter;
 
-  return { graph, users };
+  return { graph, users, userFilter };
 };
 
-
-export default connect(mapStateToProps, { getGraph })(Graphspecific);
+export default connect(mapStateToProps, { getGraph, adjustGraph })(
+  Graphspecific
+);

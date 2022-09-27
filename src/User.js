@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-function User({ user, userArray, defaultChecked, state, clickItem }, props) {
-  if (state == undefined) {
+function User({ user, state, clickItem }) {
+  if (state === undefined) {
     return (
       <li className="list-item" value={user} key={user}>
         <div>

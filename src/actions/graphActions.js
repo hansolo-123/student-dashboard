@@ -1,4 +1,4 @@
-import { GET_GRAPH } from "./types";
+import { GET_GRAPH, ADJUST_GRAPH } from "./types";
 import mockdata from "../data/mockdata.csv";
 import Papa from "papaparse";
 
@@ -18,4 +18,12 @@ export const getGraph = () => (dispatch) => {
       payload: data,
     })
   );
+};
+
+export const adjustGraph = (UserSelect) => {
+  console.log(UserSelect);
+  return {
+    type: ADJUST_GRAPH,
+    UserSelect,
+  };
 };
