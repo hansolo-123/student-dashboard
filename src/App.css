@@ -1,29 +1,41 @@
 * {
   margin-top: 0px;
   margin-bottom: 0px;
-  
- 
+  text-decoration: none;
+  list-style: none;
 }
 
-
-
-.x-item {
+.x .graph {
   display: flex;
   flex-wrap: wrap;
-  width:1400px;
-  
-  
+  width: 1400px;
+  position: absolute;
+}
+
+.x .users {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 0px;
+  flex-direction:column;
+}
+
+input[type="checkbox"] {
+  color: red;
+}
+
+.list-item {
+color:black;
+flex-direction: column;
 }
 
 .x-1 {
-  min-width: 150px;
- 
+  min-width: 1400px;
 }
 .x-2,
 .x-3,
 .x-4 {
   min-width: 350px;
-
 }
 
 div p {

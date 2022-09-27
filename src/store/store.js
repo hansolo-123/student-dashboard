@@ -9,7 +9,7 @@ const initialState = {};
 const middleware = [thunk];
 
 const composedEnhancer = composeWithDevTools(
-    // Add whatever middleware you actually want to use here
+    
     applyMiddleware(...middleware))
 
 const store = createStore(

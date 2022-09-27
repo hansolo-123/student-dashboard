@@ -1,19 +1,31 @@
-import { GET_GRAPH, ADJUST_GRAPH } from '../actions/types'
+import { GET_GRAPH, ADJUST_GRAPH } from "../actions/types";
 
-const initialState = {
-    data: [],
-}
-
-export default function(state = initialState, action){
-switch (action.type) {
+export default function reducer(state = { data: [], user: [] }, action) {
+  switch (action.type) {
     case GET_GRAPH:
-        console.log('reducer')
-              return {
-            ...state,
-        data: action.payload
-        }
-    default:
-        return state;
-    
-}
+      return Object.assign({}, state, {
+        user: action.payload
+          .map((item) => item.name)
+          .filter((n) => n)
+          .filter((value, index, self) => self.indexOf(value) === index),
+        data: action.payload.filter(function (user) {
+          return user.name === "Evelyn";
+        }),
+      });
+    default: // Do nothing}
+      return state;
+
+      case ADJUST_GRAPH:
+      return Object.assign({}, state, {
+          data: action.payload.filter(function (user) {
+          return user.name === "Evelyn";
+        }),
+      });
+  }
+  
+ 
+
+
+
+
 }
