@@ -5,17 +5,38 @@
   list-style: none;
 }
 
-.x .graph {
+.container {
+  min-width: 1400px;
+  max-width: 1400px;
   display: flex;
-  flex-wrap: wrap;
-  width: 1400px;
-  position: absolute;
+
 }
 
-.x .users {
-  position: relative;
-  margin-left: 10px;
+main h3 {
+text-align: center;
+text-align: justify;
+font-size: 28px;
+padding-top: 25px;
+padding-bottom: 15px;
+margin-left: 700px;
+letter-spacing: 3px;
+font-weight: 800;
+line-height: 0px;
+
+}
+
+.VictoryContainer {
+  width: 1100px;
+  margin-left: 0px;
   margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.users {
+  position: relative;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 50px;
   border: 0px;
   flex-direction:column;
 }
@@ -24,10 +45,8 @@ input[type="checkbox"] {
   color: red;
 }
 
-.list-item {
-color:black;
-flex-direction: column;
-}
+.menu_btn{margin-left:10px;
+width: 200px;}
 
 .x-1 {
   min-width: 1400px;

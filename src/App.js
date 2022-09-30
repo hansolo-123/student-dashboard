@@ -7,6 +7,8 @@ import Graphspecific from "./components/Graphspecific";
 import { Routes, Route } from "react-router";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import * as V from 'victory';
+
 
 class App extends Component {
   takeUrl = (user) => {
@@ -28,32 +30,12 @@ class App extends Component {
           </Routes>
         </div>
         <nav>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <Link to="Graphspecific">Graphspecific</Link>
-          <br></br>
-          <Link to="/">Graphoverview</Link>
+          <Link to="/"><button className="menu_btn">Back to Graphoverview</button></Link>
         </nav>
       </Provider>
     );
   }
 }
-
 export function AppWithRouter(props) {
   const navigate = useNavigate();
   return <App navigate={navigate}></App>;

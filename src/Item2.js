@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Item({ item }) {
+function Item2({ item }) {
 
 
   return (
@@ -12,10 +12,10 @@ function Item({ item }) {
   
     >
       <div> 
-      {item} 
+      {item.assignment} {item.difficulty} {item.pleasure}
       </div>{" "}
     </li>
   );
 }
 
-export { Item };
+export { Item2 };
